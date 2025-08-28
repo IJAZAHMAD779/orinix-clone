@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#001138] font-['Clash_Display']">
+    <!-- navbar -->
+    <nav
+      class="flex flex-col md:flex-row justify-between items-center px-4 py-2 md:px-6 md:py-4 bg-[#081342]"
+    >
+      <!-- Left: Logo + Text -->
+      <div class="flex items-center gap-2">
+        <img
+          class="w-10 h-10 object-contain"
+          src="./images/Group 1171274904.png"
+          alt="logo"
+        />
+        <p
+          class="text-white font-bold text-lg md:text-xl font-['Clash_Display']"
+        >
+          Orinix
+        </p>
+      </div>
+
+      <!-- Center: Navigation Links -->
+      <ul
+        class="flex gap-4 sm:gap-4 md:gap-6 text-white text-sm sm:text-sm md:text-lg font-['Clash_Display']"
+      >
+        <li class="text-white font-bold cursor-pointer">Homepage</li>
+        <li class="hover:text-[#999999] cursor-pointer">Features</li>
+        <li class="hover:text-[#58595a] cursor-pointer">Usecases</li>
+        <li class="hover:text-[#58595a] cursor-pointer">Pricing</li>
+        <li class="hover:text-[#58595a] cursor-pointer">Blog</li>
+      </ul>
+
+      <!-- Right: Button -->
+      <button
+        class="text-white bg-[#6665fe] rounded-lg shadow-lg font-normal md:font-semibold px-3 py-1 md:px-5 md:py-2 font-['Clash_Display']"
+      >
+        Join the waitlist
+      </button>
+    </nav>
+    <!-- hero section -->
+    <div class="relative w-full md:h-[1200px] h-[800px] overflow-hidden">
+      <!-- Left Glow -->
+      <div
+        class="absolute top-20 left-[-150px] w-[500px] h-[500px] bg-[#002675] rounded-full blur-[150px] opacity-70"
+      ></div>
+
+      <!-- Middle Glow (bigger, behind text+image) -->
+      <div
+        class="absolute top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#8921ca] rounded-full blur-[150px] opacity-60"
+      ></div>
+
+      <!-- Right Glow -->
+      <div
+        class="absolute top-24 right-[-150px] w-[500px] h-[500px] bg-[#002675] rounded-full blur-[150px] opacity-70"
+      ></div>
+
+      <!-- Content -->
+      <div
+        class="relative z-10 flex flex-col items-center justify-center h-full text-center"
+      >
+        <h1
+          class="text-white text-3xl md:text-6xl font-['Clash_Display'] font-bold"
+        >
+          Integrate AI For A
+        </h1>
+        <h1
+          class="text-white text-3xl md:text-6xl font-['Clash_Display'] font-bold"
+        >
+          Competitive Analysis
+        </h1>
+        <h1
+          class="text-white text-3xl md:text-6xl font-['Clash_Display'] font-bold"
+        >
+          For Your Business
+        </h1>
+        <p class="text-gray-300 mt-4 font-['Inter'] max-w-lg">
+          Elevate your advertising game with creatives that consistently
+          outperform your competitors, setting your brand apart.
+        </p>
+        <div class="mt-8 flex gap-4">
+          <button
+            class="text-white bg-[#6665fe] rounded-lg shadow-lg font-semibold px-5 py-2 font-['Clash_Display']"
+          >
+            Join the waitlist
+          </button>
+          <div
+            class="text-white border border-white rounded-lg shadow-lg font-semibold px-8 py-2 font-['Clash_Display'] cursor-pointer inline-block"
+          >
+            know more
+          </div>
+        </div>
+        <div class="flex flex-col mt-12 md:w-full justify-center items-center">
+          <img
+            src="./images/Group 1171274905.png"
+            alt="img"
+            class="md:h-[542px] md:w-[819px]"
+          />
+          <img
+            src="./images/Sale.png"
+            alt="img"
+            class="md:h-[80px] sm:h-[60px] w-full -mt-5"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- help section -->
+    <div class="bg-[#011238] w-full py-20">
+      <div class="flex flex-col md:flex-row gap-12 md:gap-56 mx-4 md:mx-32">
+        <!-- Left: Images Section -->
+        <div class="flex items-center justify-center mb-8 md:mb-0 md:w-1/2">
+          <div class="flex justify-center items-center w-full">
+            <img
+              src="./images/Untitled-1 1.png"
+              alt="image"
+              class="w-full max-w-xs md:max-w-none md:w-auto"
+            />
+          </div>
+        </div>
+
+        <!-- Right: Text Section -->
+        <div
+          class="w-full md:w-1/2 flex justify-center items-center flex-col space-y-4"
+        >
+          <!-- Main Heading -->
+          <h2
+            class="text-2xl md:text-3xl font-bold text-white mb-8 md:mb-12 text-center md:text-left"
+          >
+            Help You Find The Best Analysis For Your Business
+          </h2>
+
+          <!-- Features -->
+          <div class="w-full space-y-8 md:space-y-10">
+            <!-- Feature 1 -->
+            <div class="flex items-start space-x-4">
+              <img
+                src="./images/Logo.png"
+                alt="icon"
+                class="w-10 h-10 md:w-12 md:h-12"
+              />
+              <div class="text-white">
+                <p class="text-base md:text-lg font-semibold">
+                  Trusted and Accurate
+                </p>
+                <p class="opacity-80 text-sm md:text-base">
+                  Amet minim mollit non deserunt ullamco est sit dolor do amet
+                  sint. Velit officia consequat duis
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="flex items-start space-x-4">
+              <img
+                src="./images/Logo (1).png"
+                alt="icon"
+                class="w-10 h-10 md:w-12 md:h-12"
+              />
+              <div class="text-white">
+                <p class="text-base md:text-lg font-semibold">
+                  Hired By Top Company
+                </p>
+                <p class="opacity-80 text-sm md:text-base">
+                  Amet minim mollit non deserunt ullamco est sit dolor do amet
+                  sint. Velit officia consequat duis
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="flex items-start space-x-4">
+              <img
+                src="./images/Logo (2).png"
+                alt="icon"
+                class="w-10 h-10 md:w-12 md:h-12"
+              />
+              <div class="text-white">
+                <p class="text-base md:text-lg font-semibold">
+                  Various Categories
+                </p>
+                <p class="opacity-80 text-sm md:text-base">
+                  Amet minim mollit non deserunt ullamco est sit dolor do amet
+                  sint. Velit officia consequat duis
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- why orinix section -->
+    <div class="bg-[#05194a] w-full py-20">
+      <div class="flex flex-col items-center gap-6">
+        <h2
+          class="text-3xl md:text-5xl font-bold font-['Clash_Display'] text-white"
+        >
+          Why Orinix would be
+        </h2>
+        <h2
+          class="text-3xl md:text-5xl font-bold font-['Clash_Display'] text-white"
+        >
+          your best fit?
+        </h2>
+        <p class="opacity-80 text-base text-center text-white">
+          Watch this 1 min video to learn about Orinix.
+        </p>
+        <img src="./images/Rectangle.png" alt="image" />
+      </div>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 px-16 py-12 text-white font-['Clash_Display']"
+      >
+        <div class="flex flex-col items-center gap-2">
+          <img src="./images/Icon.png" alt="icon" />
+          <p class="text-lg font-semibold">Fully Responsive</p>
+          <p class="opacity-80 text-base text-center">
+            With lots of unique blocks, you can easily build a page without
+            coding.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="./images/Icon (1).png" alt="icon" />
+          <p class="text-lg font-semibold">Multiple Layouts</p>
+          <p class="opacity-80 text-base text-center">
+            With lots of unique blocks, you can easily build a page without
+            coding.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="./images/Icon (2).png" alt="icon" />
+          <p class="text-lg font-semibold">Faster Loading</p>
+          <p class="opacity-80 text-base text-center">
+            With lots of unique blocks, you can easily build a page without
+            coding.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="./images/Icon (3).png" alt="icon" />
+          <p class="text-lg font-semibold">Super Support</p>
+          <p class="opacity-80 text-base text-center">
+            With lots of unique blocks, you can easily build a page without
+            coding.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="./images/Icon (4).png" alt="icon" />
+          <p class="text-lg font-semibold">Rich Documentation</p>
+          <p class="opacity-80 text-base text-center">
+            With lots of unique blocks, you can easily build a page without
+            coding.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="./images/Icon (5).png" alt="icon" />
+          <p class="text-lg font-semibold">Lifetime Updates</p>
+          <p class="opacity-80 text-base text-center">
+            With lots of unique blocks, you can easily build a page without
+            coding.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- software & reviews section -->
+    <div>
+      <div
+        class="bg-[#001139] w-full py-40 flex flex-col items-center gap-6 font-['Clash_Display']"
+      >
+        <h3 class="text-3xl md:text-5xl font-bold text-white">
+          Useful softwares
+        </h3>
+        <h3 class="text-3xl md:text-5xl font-bold text-white">
+          that We assist.
+        </h3>
+        <img src="./images/logos.png" alt="logos" class="mt-8 sm:mx-20" />
+      </div>
+
+      <div
+        class="flex flex-col items-center font-['Clash_Display'] gap-10 py-24 w-full bg-[#05194a]"
+      >
+        <h4 class="text-2xl sm:ml-8 md:text-3xl font-bold text-white">
+          What people are saying about circle!
+        </h4>
+        <img src="./images/Card.png" alt="img" />
+      </div>
+    </div>
+
+    <!-- pricing section -->
+    <div class="w-full h-auto bg-[#00133b] py-20">
+      <!-- text section -->
+      <div class="flex flex-col items-center gap-6">
+        <h4
+          class="text-3xl md:text-5xl font-bold font-['Clash_Display'] text-white"
+        >
+          Pricing Plans
+        </h4>
+        <p class="opacity-80 text-base text-center text-white">
+          Coca landing page UI Kit no credit card required. All plans come with
+        </p>
+        <p class="opacity-80 text-base text-center text-white -mt-5">
+          a free, 14 day trial of our Premium features.
+        </p>
+      </div>
+
+      <!-- pricing cards section -->
+      <div
+        class="flex flex-col md:flex-row justify-center items-center mt-24 gap-20 font-['Clash_Display']"
+      >
+        <!-- card 1 -->
+        <div
+          class="w-72 h-auto border border-white rounded-3xl px-10 py-10 bg-[#05194a] shadow-lg"
+        >
+          <p class="text-base text-white opacity-70">silver</p>
+          <div class="flex gap-2 items-center">
+            <h4 class="text-3xl font-bold text-white">$50</h4>
+            <p class="text-base text-white opacity-70">/month</p>
+          </div>
+          <div class="flex flex-col gap-2 mt-8">
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              No Discount
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Basic support
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Ads Banner Free
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Design Style
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Component library
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              All Limited links
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Own Analytics platform
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Chat support
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Optimized hashtags
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Unlimited users
+            </p>
+          </div>
+          <div>
+            <button
+              class="text-[#455eed] bg-white rounded-lg shadow-lg font-normal px-5 py-2 font-['Clash_Display'] mt-5"
+            >
+              Choose plan
+            </button>
+          </div>
+        </div>
+
+        <!-- card 2 -->
+
+        <div
+          class="w-72 h-auto rounded-3xl px-10 py-10 md:-mt-20 bg-[#455eed] shadow-lg"
+        >
+          <p class="text-base text-white opacity-70">Gold</p>
+          <div class="flex gap-2 items-center">
+            <h4 class="text-3xl font-bold text-white">$100</h4>
+            <p class="text-base text-white opacity-70">/month</p>
+          </div>
+          <div class="flex flex-col gap-2 mt-8">
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              No Discount
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Basic support
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Ads Banner Free
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Design Style
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Component library
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              All Limited links
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Own Analytics platform
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Chat support
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Optimized hashtags
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Unlimited users
+            </p>
+          </div>
+          <div>
+            <button
+              class="text-[#455eed] bg-white rounded-lg shadow-lg font-normal px-5 py-2 font-['Clash_Display'] mt-5"
+            >
+              Choose plan
+            </button>
+          </div>
+        </div>
+
+        <!-- card 3 -->
+
+        <div
+          class="w-72 h-auto border border-white rounded-3xl px-10 py-10 bg-[#05194a] shadow-lg"
+        >
+          <p class="text-base text-white opacity-70">Premium</p>
+          <div class="flex gap-2 items-center">
+            <h4 class="text-3xl font-bold text-white">$150</h4>
+            <p class="text-base text-white opacity-70">/month</p>
+          </div>
+          <div class="flex flex-col gap-2 mt-8">
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              No Discount
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Basic support
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Ads Banner Free
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Design Style
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Component library
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              All Limited links
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Own Analytics platform
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Chat support
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Optimized hashtags
+            </p>
+            <p
+              class="text-white opacity-60 before:content-['✔'] before:text-blue-500 before:mr-2 before:inline-block"
+            >
+              Unlimited users
+            </p>
+          </div>
+          <div>
+            <button
+              class="text-[#455eed] bg-white rounded-lg shadow-lg font-normal px-5 py-2 font-['Clash_Display'] mt-5"
+            >
+              Choose plan
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- question section -->
+    <div class="w-full h-auto bg-[#05194a] py-20">
+      <!-- text-section  -->
+      <div class="flex flex-col sm:mx-10 items-center gap-6">
+        <h5
+          class="text-3xl md:text-5xl font-bold font-['Clash_Display'] text-white"
+        >
+          Frequently Asked Questions
+        </h5>
+        <p class="opacity-80 text-base text-center text-white">
+          Create custom landing pages with Omega that converts.
+        </p>
+      </div>
+
+      <!-- Questions -->
+      <div
+        class="grid grid-cols-1 mx-12 md:grid-cols-2 md:grid-rows-3 md:gap-16 md:mx-32 mt-16"
+      >
+        <div class="flex flex-col gap-6 mt-16">
+          <h6 class="text-lg font-bold text-white">
+            What's gonna be your question?
+          </h6>
+          <p class="opacity-80 text-sm text-white text-justify">
+            Create custom landing pages with Omega that converts more visitors
+            than any website. With lots of unique blocks, you can easily build a
+            page without any design or custom coding. with Omega that converts
+            more visitors than any website.
+          </p>
+        </div>
+        <div class="flex flex-col gap-6 mt-16">
+          <h6 class="text-lg font-bold text-white">
+            What's gonna be your question?
+          </h6>
+          <p class="opacity-80 text-sm text-white text-justify">
+            Create custom landing pages with Omega that converts more visitors
+            than any website. With lots of unique blocks, you can easily build a
+            page without any design or custom coding. with Omega that converts
+            more visitors than any website.
+          </p>
+        </div>
+        <div class="flex flex-col gap-6 mt-16">
+          <h6 class="text-lg font-bold text-white">
+            What's gonna be your question?
+          </h6>
+          <p class="opacity-80 text-sm text-white text-justify">
+            Create custom landing pages with Omega that converts more visitors
+            than any website. With lots of unique blocks, you can easily build a
+            page without any design or custom coding. with Omega that converts
+            more visitors than any website.
+          </p>
+        </div>
+        <div class="flex flex-col gap-6 mt-16">
+          <h6 class="text-lg font-bold text-white">
+            What's gonna be your question?
+          </h6>
+          <p class="opacity-80 text-sm text-white text-justify">
+            Create custom landing pages with Omega that converts more visitors
+            than any website. With lots of unique blocks, you can easily build a
+            page without any design or custom coding. with Omega that converts
+            more visitors than any website.
+          </p>
+        </div>
+        <div class="flex flex-col gap-6 mt-16">
+          <h6 class="text-lg font-bold text-white">
+            What's gonna be your question?
+          </h6>
+          <p class="opacity-80 text-sm text-white text-justify">
+            Create custom landing pages with Omega that converts more visitors
+            than any website. With lots of unique blocks, you can easily build a
+            page without any design or custom coding. with Omega that converts
+            more visitors than any website.
+          </p>
+        </div>
+        <div class="flex flex-col gap-6 mt-16">
+          <h6 class="text-lg font-bold text-white">
+            What's gonna be your question?
+          </h6>
+          <p class="opacity-80 text-sm text-white text-justify">
+            Create custom landing pages with Omega that converts more visitors
+            than any website. With lots of unique blocks, you can easily build a
+            page without any design or custom coding. with Omega that converts
+            more visitors than any website.
+          </p>
+        </div>
+      </div>
+      <!-- exception -->
+      <div class="flex gap-1 justify-center items-center mt-16">
+        <p class="text-white">Didn't find your answer?</p>
+        <p class="text-blue-500">Contact here.</p>
+      </div>
+    </div>
+    <!-- free version section -->
+    <div class="w-full bg-[#001138] py-20 px-8 font-[clash_display]">
+      <div
+        class="w-full border rounded-2xl bg-[#455eed] px-16 py-5 flex flex-col md:flex-row gap-12 items-center shadow-lg"
+      >
+        <!-- text section  -->
+        <div class="flex flex-col justify-start gap-4 w-full">
+          <div class="flex gap-4 flex-col justify-start">
+            <h6 class="text-2xl md:text-3xl font-bold text-white text-left">
+              Explore Free Version now!
+            </h6>
+            <p class="opacity-80 text-sm text-white">
+              Search all the open positions on the web. Get your own
+              personalized dashboard for lifetime.
+            </p>
+          </div>
+          <!-- buttons -->
+          <div class="mt-8 flex flex-col md:flex-row gap-4">
+            <button
+              class="bg-white rounded-lg shadow-lg font-semibold px-5 py-2 font-['Clash_Display']"
+            >
+              Join the waitlist
+            </button>
+            <div
+              class="text-white border border-white rounded-lg shadow-lg font-semibold px-8 py-2 font-['Clash_Display'] cursor-pointer inline-block"
+            >
+              know more
+            </div>
+          </div>
+        </div>
+
+        <!-- image section  -->
+        <div class="flex items-center">
+          <img src="./images/Work time-rafiki (2) 1.png" alt="image" />
+        </div>
+      </div>
+    </div>
+
+    <!-- footer section -->
+    <div class="w-full bg-[#05194a] py-12 px-4 md:px-10 font-[clash_display]">
+      <!-- left section  -->
+      <div
+        class="flex flex-col text-white md:flex-row justify-between items-center gap-6 md:gap-10"
+      >
+        <div class="flex items-center gap-2">
+          <img
+            class="w-10 h-10 object-contain"
+            src="./images/Group 1171274904.png"
+            alt="logo"
+          />
+          <p class="text-white font-bold text-xl font-['Clash_Display']"></p>
+          Orinix
+        </div>
+        <!-- icons -->
+        <div class="flex gap-2">
+          <div
+            class="w-8 h-8 bg-[#2c5b99] text-white flex items-center justify-center rounded-full"
+          >
+            <i class="fab fa-facebook text-base"></i>
+          </div>
+          <div
+            class="w-8 h-8 bg-[#0078b4] text-white flex items-center justify-center rounded-full"
+          >
+            <i class="fab fa-linkedin-in text-base"></i>
+          </div>
+          <div
+            class="w-8 h-8 bg-[#00aeef] text-white flex items-center justify-center rounded-full"
+          >
+            <i class="fab fa-twitter text-base"></i>
+          </div>
+        </div>
+        <!-- line -->
+        <div>
+          <p class="text-white opacity-60 text-base text-center md:text-left">
+            © 2024 Orinix Reserved
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
