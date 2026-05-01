@@ -17,43 +17,94 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'clash-display': ['Clash_Display', 'sans-serif'],
+              'inter': ['Inter', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                dark: '#001138',
+                primary: '#6665fe',
+                blue: '#455eed',
+                light: '#081342',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Marquee Animation */
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .animate-scroll {
+        animation: scroll 15s linear infinite;
+      }
+      /* Hide scrollbar for clean look */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #001138;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #6665fe;
+        border-radius: 4px;
+      }
+    </style>
   </head>
   <body class="bg-[#001138] font-['Clash_Display']">
     <!-- navbar -->
-    <nav
-      class="flex flex-col md:flex-row justify-between items-center px-4 py-2 md:px-6 md:py-4 bg-[#081342]"
-    >
+    <nav class="flex justify-between items-center px-4 py-4 md:px-8 md:py-5 bg-[#081342] relative z-50">
       <!-- Left: Logo + Text -->
       <div class="flex items-center gap-2">
-        <img
-          class="w-10 h-10 object-contain"
-          src="./images/Group 1171274904.png"
-          alt="logo"
-        />
-        <p
-          class="text-white font-bold text-lg md:text-xl font-['Clash_Display']"
-        >
+        <div class="w-10 h-10 bg-gradient-to-tr from-[#455eed] to-[#8921ca] rounded-xl flex justify-center items-center shadow-[0_0_10px_rgba(69,94,237,0.5)]">
+            <i class="fa-solid fa-chart-pie text-white text-lg"></i>
+        </div>
+        <p class="text-white font-bold text-xl font-['Clash_Display']">
           Orinix
         </p>
       </div>
 
-      <!-- Center: Navigation Links -->
-      <ul
-        class="flex gap-4 sm:gap-4 md:gap-6 text-white text-sm sm:text-sm md:text-lg font-['Clash_Display']"
-      >
-        <li class="text-white font-bold cursor-pointer">Homepage</li>
-        <li class="hover:text-[#999999] cursor-pointer">Features</li>
-        <li class="hover:text-[#58595a] cursor-pointer">Usecases</li>
-        <li class="hover:text-[#58595a] cursor-pointer">Pricing</li>
-        <li class="hover:text-[#58595a] cursor-pointer">Blog</li>
+      <!-- Hamburger Menu (Mobile) -->
+      <div class="md:hidden cursor-pointer" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <i class="fa-solid fa-bars text-white text-2xl hover:text-[#6665fe] transition"></i>
+      </div>
+
+      <!-- Center: Navigation Links (Desktop) -->
+      <ul class="hidden md:flex gap-8 text-white text-base font-['Clash_Display'] items-center">
+        <li class="text-white font-bold cursor-pointer transition hover:text-[#6665fe]">Homepage</li>
+        <li class="hover:text-[#6665fe] transition cursor-pointer">Features</li>
+        <li class="hover:text-[#6665fe] transition cursor-pointer">Usecases</li>
+        <li class="hover:text-[#6665fe] transition cursor-pointer">Pricing</li>
+        <li class="hover:text-[#6665fe] transition cursor-pointer">Blog</li>
       </ul>
 
-      <!-- Right: Button -->
-      <button
-        class="text-white bg-[#6665fe] rounded-lg shadow-lg font-normal md:font-semibold px-3 py-1 md:px-5 md:py-2 font-['Clash_Display']"
-      >
+      <!-- Right: Button (Desktop) -->
+      <button class="hidden md:block text-white bg-[#6665fe] hover:bg-[#455eed] transition rounded-lg shadow-[0_0_15px_rgba(102,101,254,0.5)] font-semibold px-6 py-2.5 font-['Clash_Display']">
         Join the waitlist
       </button>
+
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#081342] border-t border-white/10 flex-col items-center py-6 gap-6 md:hidden shadow-2xl z-50">
+        <ul class="flex flex-col gap-4 text-center text-white text-lg font-['Clash_Display'] w-full">
+          <li class="font-bold cursor-pointer hover:text-[#6665fe] transition">Homepage</li>
+          <li class="hover:text-[#6665fe] transition cursor-pointer">Features</li>
+          <li class="hover:text-[#6665fe] transition cursor-pointer">Usecases</li>
+          <li class="hover:text-[#6665fe] transition cursor-pointer">Pricing</li>
+          <li class="hover:text-[#6665fe] transition cursor-pointer">Blog</li>
+        </ul>
+        <button class="text-white bg-[#6665fe] hover:bg-[#455eed] transition rounded-lg shadow-lg font-semibold px-8 py-3 font-['Clash_Display'] w-11/12">
+          Join the waitlist
+        </button>
+      </div>
     </nav>
     <!-- hero section -->
     <div class="relative w-full md:h-[1200px] h-[800px] overflow-hidden">
@@ -107,31 +158,111 @@
             know more
           </div>
         </div>
-        <div class="flex flex-col mt-12 md:w-full justify-center items-center">
-          <img
-            src="./images/Group 1171274905.png"
-            alt="img"
-            class="md:h-[542px] md:w-[819px]"
-          />
-          <img
-            src="./images/Sale.png"
-            alt="img"
-            class="md:h-[80px] sm:h-[60px] w-full -mt-5"
-          />
+        <div class="flex flex-col mt-12 md:w-full justify-center items-center w-full overflow-hidden">
+          <!-- Dashboard Code Component -->
+          <div class="relative w-[90%] md:w-[819px] h-[300px] md:h-[450px] bg-white/10 backdrop-blur-md border border-white/20 rounded-t-2xl shadow-2xl p-4 md:p-6 flex flex-col gap-4 mt-8">
+            <!-- Header -->
+            <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                <div class="flex gap-2 items-center">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-[#455eed] to-[#8921ca]"></div>
+                    <div class="h-4 w-24 bg-white/20 rounded"></div>
+                </div>
+                <div class="flex gap-2">
+                    <div class="h-6 w-16 bg-white/20 rounded-full"></div>
+                    <div class="h-6 w-16 bg-white/20 rounded-full"></div>
+                </div>
+            </div>
+            <!-- Body -->
+            <div class="flex flex-1 gap-4 h-full">
+                <!-- Sidebar -->
+                <div class="hidden md:flex flex-col gap-3 w-1/4 border-r border-white/10 pr-4">
+                    <div class="h-8 w-full bg-white/20 rounded"></div>
+                    <div class="h-8 w-full bg-white/10 rounded"></div>
+                    <div class="h-8 w-full bg-white/10 rounded"></div>
+                    <div class="h-8 w-full bg-white/10 rounded"></div>
+                </div>
+                <!-- Main Content -->
+                <div class="flex flex-col gap-4 w-full md:w-3/4">
+                    <div class="flex gap-2 md:gap-4">
+                        <div class="flex-1 h-20 md:h-24 bg-gradient-to-br from-[#455eed]/40 to-transparent border border-[#455eed]/50 rounded-xl p-3 flex flex-col justify-center">
+                            <div class="text-white/50 text-xs md:text-sm mb-1">Total Sales</div>
+                            <div class="text-white font-bold text-lg md:text-2xl">$45,231</div>
+                        </div>
+                        <div class="flex-1 h-20 md:h-24 bg-gradient-to-br from-[#8921ca]/40 to-transparent border border-[#8921ca]/50 rounded-xl p-3 flex flex-col justify-center">
+                            <div class="text-white/50 text-xs md:text-sm mb-1">Active Users</div>
+                            <div class="text-white font-bold text-lg md:text-2xl">12,493</div>
+                        </div>
+                        <div class="hidden md:flex flex-1 h-24 bg-white/5 border border-white/10 rounded-xl p-3 flex flex-col justify-center">
+                            <div class="text-white/50 text-sm mb-1">Conversion</div>
+                            <div class="text-white font-bold text-2xl">4.2%</div>
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-white/5 border border-white/10 rounded-xl flex items-end p-4 gap-2 justify-between mt-2">
+                        <!-- Pseudo Bar Chart -->
+                        <div class="w-full bg-[#6665fe] rounded-t-sm h-[40%] hover:h-[45%] transition-all"></div>
+                        <div class="w-full bg-[#455eed] rounded-t-sm h-[70%] hover:h-[75%] transition-all"></div>
+                        <div class="w-full bg-[#8921ca] rounded-t-sm h-[50%] hover:h-[55%] transition-all"></div>
+                        <div class="w-full bg-[#6665fe] rounded-t-sm h-[80%] hover:h-[85%] transition-all"></div>
+                        <div class="w-full bg-[#455eed] rounded-t-sm h-[30%] hover:h-[35%] transition-all"></div>
+                        <div class="w-full bg-[#8921ca] rounded-t-sm h-[60%] hover:h-[65%] transition-all"></div>
+                        <div class="w-full bg-[#6665fe] rounded-t-sm h-[90%] hover:h-[95%] transition-all"></div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- Ticker Code Component -->
+          <div class="w-full h-[50px] md:h-[80px] bg-gradient-to-r from-[#455eed] via-[#8921ca] to-[#455eed] relative z-20 flex items-center overflow-hidden border-y border-white/20 transform -rotate-1 md:-rotate-2 scale-[1.02] md:scale-105 shadow-[0_0_30px_rgba(137,33,202,0.5)] -mt-4 md:-mt-10">
+             <div class="flex whitespace-nowrap animate-scroll items-center gap-8 px-4 w-max">
+                 <span class="text-white text-lg md:text-3xl font-bold font-['Clash_Display'] uppercase">Upgrade Your Business</span>
+                 <i class="fa-solid fa-star text-yellow-300 text-xs md:text-sm"></i>
+                 <span class="text-white text-lg md:text-3xl font-bold font-['Clash_Display'] uppercase">AI Powered Insights</span>
+                 <i class="fa-solid fa-star text-yellow-300 text-xs md:text-sm"></i>
+                 <span class="text-white text-lg md:text-3xl font-bold font-['Clash_Display'] uppercase">Boost Conversion Rate</span>
+                 <i class="fa-solid fa-star text-yellow-300 text-xs md:text-sm"></i>
+                 <span class="text-white text-lg md:text-3xl font-bold font-['Clash_Display'] uppercase">Upgrade Your Business</span>
+                 <i class="fa-solid fa-star text-yellow-300 text-xs md:text-sm"></i>
+                 <span class="text-white text-lg md:text-3xl font-bold font-['Clash_Display'] uppercase">AI Powered Insights</span>
+                 <i class="fa-solid fa-star text-yellow-300 text-xs md:text-sm"></i>
+                 <span class="text-white text-lg md:text-3xl font-bold font-['Clash_Display'] uppercase">Boost Conversion Rate</span>
+                 <i class="fa-solid fa-star text-yellow-300 text-xs md:text-sm"></i>
+             </div>
+          </div>
         </div>
       </div>
     </div>
     <!-- help section -->
-    <div class="bg-[#011238] w-full py-20">
-      <div class="flex flex-col md:flex-row gap-12 md:gap-56 mx-4 md:mx-32">
+    <div class="bg-[#011238] w-full py-16 md:py-24">
+      <div class="flex flex-col md:flex-row gap-12 md:gap-20 mx-4 md:mx-auto max-w-7xl px-4 items-center">
         <!-- Left: Images Section -->
-        <div class="flex items-center justify-center mb-8 md:mb-0 md:w-1/2">
-          <div class="flex justify-center items-center w-full">
-            <img
-              src="./images/Untitled-1 1.png"
-              alt="image"
-              class="w-full max-w-xs md:max-w-none md:w-auto"
-            />
+        <div class="flex items-center justify-center w-full md:w-1/2">
+          <!-- Abstract UI Component to replace image -->
+          <div class="relative w-full max-w-sm h-[300px] md:h-[400px]">
+             <!-- Base Card -->
+             <div class="absolute top-10 left-0 md:left-4 w-4/5 h-48 md:h-64 bg-gradient-to-br from-[#455eed]/20 to-[#8921ca]/20 border border-white/10 rounded-2xl backdrop-blur-sm p-4 md:p-6 transform -rotate-6 shadow-2xl">
+                 <div class="h-3 md:h-4 w-1/3 bg-white/20 rounded mb-4"></div>
+                 <div class="h-2 w-full bg-white/10 rounded mb-2"></div>
+                 <div class="h-2 w-5/6 bg-white/10 rounded mb-2"></div>
+                 <div class="h-2 w-4/6 bg-white/10 rounded"></div>
+             </div>
+             <!-- Top Card -->
+             <div class="absolute top-16 md:top-20 right-0 md:-right-4 w-3/4 h-48 md:h-56 bg-[#05194a] border border-[#6665fe]/50 rounded-2xl shadow-xl p-4 md:p-5 flex flex-col justify-between transform rotate-3 transition hover:rotate-0 duration-300">
+                 <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                     <span class="text-white font-bold text-xs md:text-sm">Analytics</span>
+                     <span class="text-green-400 text-[10px] md:text-xs bg-green-400/20 px-2 py-1 rounded-full">+14%</span>
+                 </div>
+                 <div class="flex items-end gap-2 h-20 md:h-24 mt-4">
+                     <div class="w-1/4 bg-[#6665fe]/30 hover:bg-[#6665fe] transition rounded-t h-[40%]"></div>
+                     <div class="w-1/4 bg-[#6665fe]/50 hover:bg-[#6665fe] transition rounded-t h-[70%]"></div>
+                     <div class="w-1/4 bg-[#6665fe]/70 hover:bg-[#6665fe] transition rounded-t h-[50%]"></div>
+                     <div class="w-1/4 bg-[#6665fe] rounded-t h-[90%]"></div>
+                 </div>
+             </div>
+             <!-- Floating Badge -->
+             <div class="absolute -bottom-4 left-6 md:left-10 bg-white text-[#011238] font-bold px-4 md:px-6 py-2 md:py-3 rounded-xl shadow-[0_10px_30px_rgba(102,101,254,0.3)] flex items-center gap-2 md:gap-3 text-sm md:text-base">
+                 <div class="bg-green-500 rounded-full w-2 h-2 md:w-3 md:h-3 animate-pulse"></div>
+                 Best Analysis
+             </div>
           </div>
         </div>
 
@@ -206,22 +337,29 @@
       </div>
     </div>
     <!-- why orinix section -->
-    <div class="bg-[#05194a] w-full py-20">
-      <div class="flex flex-col items-center gap-6">
-        <h2
-          class="text-3xl md:text-5xl font-bold font-['Clash_Display'] text-white"
-        >
-          Why Orinix would be
+    <div class="bg-[#05194a] w-full py-16 md:py-24">
+      <div class="flex flex-col items-center gap-4 px-4">
+        <h2 class="text-3xl md:text-5xl font-bold font-['Clash_Display'] text-white text-center">
+          Why Orinix would be your best fit?
         </h2>
-        <h2
-          class="text-3xl md:text-5xl font-bold font-['Clash_Display'] text-white"
-        >
-          your best fit?
-        </h2>
-        <p class="opacity-80 text-base text-center text-white">
+        <p class="opacity-80 text-sm md:text-base text-center text-white max-w-lg mt-2 mb-6 md:mb-8">
           Watch this 1 min video to learn about Orinix.
         </p>
-        <img src="./images/Rectangle.png" alt="image" />
+        
+        <!-- Video Code Component -->
+        <div class="relative w-full max-w-4xl aspect-video bg-[#001138] rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden group cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#455eed]/20 to-[#8921ca]/20 opacity-50 group-hover:opacity-80 transition duration-500"></div>
+            <!-- Play Button -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-white/10 backdrop-blur-md border border-white/30 rounded-full flex justify-center items-center group-hover:scale-110 transition duration-300 shadow-[0_0_20px_rgba(102,101,254,0.4)]">
+                    <i class="fa-solid fa-play text-white text-2xl md:text-3xl ml-1"></i>
+                </div>
+            </div>
+            <!-- Bottom UI bar -->
+            <div class="absolute bottom-0 left-0 w-full h-1.5 md:h-2 bg-white/10">
+                <div class="h-full w-1/3 bg-[#6665fe]"></div>
+            </div>
+        </div>
       </div>
 
       <div
@@ -284,25 +422,71 @@
     </div>
     <!-- software & reviews section -->
     <div>
-      <div
-        class="bg-[#001139] w-full py-40 flex flex-col items-center gap-6 font-['Clash_Display']"
-      >
+      <div class="bg-[#001139] w-full py-20 md:py-32 flex flex-col items-center gap-4 font-['Clash_Display'] px-4 text-center">
         <h3 class="text-3xl md:text-5xl font-bold text-white">
-          Useful softwares
+          Useful softwares that We assist.
         </h3>
-        <h3 class="text-3xl md:text-5xl font-bold text-white">
-          that We assist.
-        </h3>
-        <img src="./images/logos.png" alt="logos" class="mt-8 sm:mx-20" />
+        
+        <!-- Logos Code Component -->
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 mt-12 md:mt-16 opacity-70">
+            <div class="flex items-center gap-2 text-white text-2xl md:text-3xl font-bold"><i class="fa-brands fa-apple text-3xl md:text-4xl"></i> Apple</div>
+            <div class="flex items-center gap-2 text-white text-2xl md:text-3xl font-bold"><i class="fa-brands fa-google text-3xl md:text-4xl"></i> Google</div>
+            <div class="flex items-center gap-2 text-white text-2xl md:text-3xl font-bold"><i class="fa-brands fa-microsoft text-3xl md:text-4xl"></i> Microsoft</div>
+            <div class="flex items-center gap-2 text-white text-2xl md:text-3xl font-bold"><i class="fa-brands fa-amazon text-3xl md:text-4xl"></i> Amazon</div>
+            <div class="flex items-center gap-2 text-white text-2xl md:text-3xl font-bold"><i class="fa-brands fa-figma text-3xl md:text-4xl"></i> Figma</div>
+        </div>
       </div>
 
-      <div
-        class="flex flex-col items-center font-['Clash_Display'] gap-10 py-24 w-full bg-[#05194a]"
-      >
-        <h4 class="text-2xl sm:ml-8 md:text-3xl font-bold text-white">
-          What people are saying about circle!
+      <div class="flex flex-col items-center font-['Clash_Display'] gap-10 py-20 md:py-24 w-full bg-[#05194a] px-4">
+        <h4 class="text-2xl md:text-4xl font-bold text-white text-center">
+          What people are saying about Orinix!
         </h4>
-        <img src="./images/Card.png" alt="img" />
+        
+        <!-- Review Cards Code Component -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto w-full mt-8">
+            <!-- Card 1 -->
+            <div class="bg-[#001138] border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col gap-6 shadow-xl hover:-translate-y-2 transition duration-300">
+                <div class="flex gap-1 text-yellow-400 text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-white/80 text-base flex-1">"Orinix has completely transformed how we handle our analytics. The AI insights are spot on and have boosted our conversion rates significantly."</p>
+                <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-[#6665fe] to-[#8921ca] rounded-full flex justify-center items-center font-bold text-white text-lg">S</div>
+                    <div>
+                        <div class="text-white font-bold">Sarah Jenkins</div>
+                        <div class="text-white/50 text-sm">Marketing Director</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-gradient-to-br from-[#455eed] to-[#8921ca] border border-white/20 rounded-2xl p-6 md:p-8 flex flex-col gap-6 shadow-xl transform md:scale-105 hover:-translate-y-2 transition duration-300">
+                <div class="flex gap-1 text-yellow-300 text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-white text-base flex-1">"The best tool for competitive analysis out there. The dashboard is beautiful and the data is extremely accurate and actionable."</p>
+                <div class="flex items-center gap-4 border-t border-white/20 pt-6">
+                    <div class="w-12 h-12 bg-white rounded-full flex justify-center items-center font-bold text-[#455eed] text-lg">M</div>
+                    <div>
+                        <div class="text-white font-bold">Michael Chen</div>
+                        <div class="text-white/80 text-sm">CEO, TechFlow</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-[#001138] border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col gap-6 shadow-xl hover:-translate-y-2 transition duration-300">
+                <div class="flex gap-1 text-yellow-400 text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-white/80 text-base flex-1">"We integrated Orinix last month and the ROI is already apparent. Highly recommend it for any data-driven business."</p>
+                <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-[#6665fe] to-[#8921ca] rounded-full flex justify-center items-center font-bold text-white text-lg">E</div>
+                    <div>
+                        <div class="text-white font-bold">Emma Davis</div>
+                        <div class="text-white/50 text-sm">Product Manager</div>
+                    </div>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
 
@@ -633,39 +817,75 @@
       </div>
     </div>
     <!-- free version section -->
-    <div class="w-full bg-[#001138] py-20 px-8 font-[clash_display]">
-      <div
-        class="w-full border rounded-2xl bg-[#455eed] px-16 py-5 flex flex-col md:flex-row gap-12 items-center shadow-lg"
-      >
+    <div class="w-full bg-[#001138] py-20 px-4 md:px-8 font-['Clash_Display']">
+      <div class="max-w-6xl mx-auto w-full border border-white/10 rounded-3xl bg-[#455eed] px-6 py-10 md:px-16 md:py-16 flex flex-col md:flex-row gap-12 items-center shadow-2xl relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+        </div>
+        
         <!-- text section  -->
-        <div class="flex flex-col justify-start gap-4 w-full">
+        <div class="flex flex-col justify-start gap-6 w-full md:w-1/2 relative z-10">
           <div class="flex gap-4 flex-col justify-start">
-            <h6 class="text-2xl md:text-3xl font-bold text-white text-left">
+            <h6 class="text-3xl md:text-5xl font-bold text-white text-center md:text-left leading-tight">
               Explore Free Version now!
             </h6>
-            <p class="opacity-80 text-sm text-white">
+            <p class="opacity-90 text-base md:text-lg text-white/90 text-center md:text-left">
               Search all the open positions on the web. Get your own
               personalized dashboard for lifetime.
             </p>
           </div>
           <!-- buttons -->
-          <div class="mt-8 flex flex-col md:flex-row gap-4">
-            <button
-              class="bg-white rounded-lg shadow-lg font-semibold px-5 py-2 font-['Clash_Display']"
-            >
+          <div class="mt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <button class="text-[#455eed] bg-white hover:bg-gray-100 transition rounded-lg shadow-lg font-bold px-6 py-3">
               Join the waitlist
             </button>
-            <div
-              class="text-white border border-white rounded-lg shadow-lg font-semibold px-8 py-2 font-['Clash_Display'] cursor-pointer inline-block"
-            >
-              know more
+            <div class="text-white border border-white/50 hover:bg-white/10 transition rounded-lg font-bold px-8 py-3 text-center cursor-pointer">
+              Know more
             </div>
           </div>
         </div>
 
-        <!-- image section  -->
-        <div class="flex items-center">
-          <img src="./images/Work time-rafiki (2) 1.png" alt="image" />
+        <!-- illustration code component -->
+        <div class="w-full md:w-1/2 relative z-10 flex justify-center mt-8 md:mt-0">
+            <div class="relative w-full max-w-sm h-[250px] md:h-[300px]">
+                <!-- Main window -->
+                <div class="absolute right-0 bottom-0 w-4/5 h-48 md:h-64 bg-white rounded-xl shadow-2xl p-4 flex flex-col gap-4">
+                    <div class="flex gap-2 border-b border-gray-100 pb-2">
+                        <div class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-400"></div>
+                        <div class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-400"></div>
+                        <div class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-400"></div>
+                    </div>
+                    <div class="flex gap-4 h-full">
+                        <div class="w-1/3 flex flex-col gap-2">
+                            <div class="h-10 md:h-16 bg-[#455eed]/10 rounded-lg"></div>
+                            <div class="h-10 md:h-16 bg-[#8921ca]/10 rounded-lg"></div>
+                        </div>
+                        <div class="w-2/3 flex flex-col gap-2 h-full">
+                            <div class="h-6 md:h-8 bg-gray-100 rounded-md w-full"></div>
+                            <div class="flex-1 bg-gray-50 rounded-lg flex items-end p-2 gap-1 pb-0">
+                                <div class="w-full bg-[#455eed] h-[30%] rounded-t-sm"></div>
+                                <div class="w-full bg-[#8921ca] h-[60%] rounded-t-sm"></div>
+                                <div class="w-full bg-[#455eed] h-[40%] rounded-t-sm"></div>
+                                <div class="w-full bg-[#8921ca] h-[80%] rounded-t-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Floating profile -->
+                <div class="absolute top-0 left-0 bg-white p-2 md:p-3 rounded-xl shadow-xl flex items-center gap-2 md:gap-3 animate-bounce" style="animation-duration: 3s;">
+                    <div class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-tr from-[#6665fe] to-[#8921ca] rounded-full flex justify-center items-center text-white font-bold">O</div>
+                    <div>
+                        <div class="text-gray-800 text-xs md:text-sm font-bold">Account Setup</div>
+                        <div class="text-green-500 text-[10px] md:text-xs font-bold">Completed</div>
+                    </div>
+                </div>
+                <!-- Floating badge -->
+                <div class="absolute top-20 -left-6 bg-[#8921ca] text-white p-2 md:p-3 rounded-xl shadow-xl font-bold text-xs md:text-sm transform -rotate-12">
+                    Free Lifetime Access!
+                </div>
+            </div>
         </div>
       </div>
     </div>
@@ -677,13 +897,10 @@
         class="flex flex-col text-white md:flex-row justify-between items-center gap-6 md:gap-10"
       >
         <div class="flex items-center gap-2">
-          <img
-            class="w-10 h-10 object-contain"
-            src="./images/Group 1171274904.png"
-            alt="logo"
-          />
-          <p class="text-white font-bold text-xl font-['Clash_Display']"></p>
-          Orinix
+          <div class="w-10 h-10 bg-gradient-to-tr from-[#455eed] to-[#8921ca] rounded-xl flex justify-center items-center shadow-[0_0_10px_rgba(69,94,237,0.5)]">
+            <i class="fa-solid fa-chart-pie text-white text-lg"></i>
+          </div>
+          <p class="text-white font-bold text-xl font-['Clash_Display']">Orinix</p>
         </div>
         <!-- icons -->
         <div class="flex gap-2">
