@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Orinix</title>
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { theme: { extend: { fontFamily: { 'clash-display': ['Clash_Display', 'sans-serif'], 'inter': ['Inter', 'sans-serif'], }, colors: { brand: { dark: '#001138', primary: '#6665fe', blue: '#455eed', light: '#081342', } } } } }
+    </script>
+    <style>
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #001138; }
+      ::-webkit-scrollbar-thumb { background: #6665fe; border-radius: 4px; }
+      html { scroll-behavior: smooth; }
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes zoomIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+      @keyframes fadeRight { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+      .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
+      .animate-zoom-in { animation: zoomIn 0.8s ease-out forwards; opacity: 0; }
+      .animate-fade-right { animation: fadeRight 0.8s ease-out forwards; opacity: 0; }
+      .delay-100 { animation-delay: 100ms; }
+      .delay-200 { animation-delay: 200ms; }
+      .delay-300 { animation-delay: 300ms; }
+    </style>
+  </head>
+  <body class="bg-[#001138] font-['Clash_Display']">
+    <nav class="flex justify-between items-center px-4 py-4 md:px-8 md:py-5 bg-[#081342] relative z-50">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-gradient-to-tr from-[#455eed] to-[#8921ca] rounded-xl flex justify-center items-center shadow-[0_0_10px_rgba(69,94,237,0.5)]"><i class="fa-solid fa-chart-pie text-white text-lg"></i></div>
+        <p class="text-white font-bold text-xl font-['Clash_Display']">Orinix</p>
+      </div>
+      <div class="md:hidden cursor-pointer" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"><i class="fa-solid fa-bars text-white text-2xl hover:text-[#6665fe] transition"></i></div>
+      <ul class="hidden md:flex gap-8 text-white text-base font-['Clash_Display'] items-center">
+        <li><a href="index.html" class="hover:text-[#6665fe] transition cursor-pointer">Homepage</a></li>
+        <li><a href="features.html" class="hover:text-[#6665fe] transition cursor-pointer">Features</a></li>
+        <li><a href="usecases.html" class="hover:text-[#6665fe] transition cursor-pointer">Usecases</a></li>
+        <li><a href="pricing.html" class="hover:text-[#6665fe] transition cursor-pointer">Pricing</a></li>
+        <li><a href="blog.html" class="text-white font-bold cursor-pointer transition hover:text-[#6665fe]">Blog</a></li>
+      </ul>
+      <button class="hidden md:block text-white bg-[#6665fe] hover:bg-[#455eed] transition rounded-lg shadow-[0_0_15px_rgba(102,101,254,0.5)] font-semibold px-6 py-2.5 font-['Clash_Display']">Join the waitlist</button>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#081342] border-t border-white/10 flex-col items-center py-6 gap-6 md:hidden shadow-2xl z-50">
+        <ul class="flex flex-col gap-4 text-center text-white text-lg font-['Clash_Display'] w-full">
+          <li><a href="index.html" class="hover:text-[#6665fe] transition cursor-pointer">Homepage</a></li>
+          <li><a href="features.html" class="hover:text-[#6665fe] transition cursor-pointer">Features</a></li>
+          <li><a href="usecases.html" class="hover:text-[#6665fe] transition cursor-pointer">Usecases</a></li>
+          <li><a href="pricing.html" class="hover:text-[#6665fe] transition cursor-pointer">Pricing</a></li>
+          <li><a href="blog.html" class="font-bold cursor-pointer hover:text-[#6665fe] transition">Blog</a></li>
+        </ul>
+        <button class="text-white bg-[#6665fe] hover:bg-[#455eed] transition rounded-lg shadow-lg font-semibold px-8 py-3 font-['Clash_Display'] w-11/12">Join the waitlist</button>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="relative w-full py-24 flex justify-center items-center overflow-hidden bg-[#001138]">
+      <div class="absolute top-0 w-[500px] h-[500px] bg-[#8921ca] rounded-full blur-[150px] opacity-20"></div>
+      <div class="z-10 text-center px-4 animate-fade-in-up">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">Orinix <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#6665fe] to-[#8921ca]">Blog</span></h1>
+        <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">Latest insights, tips, and updates on competitive analysis.</p>
+      </div>
+    </div>
+
+    <!-- Blog Posts Grid (New Component) -->
+    <div class="w-full h-auto bg-[#05194a] py-20 px-4 md:px-8 border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold font-['Clash_Display'] text-white text-center mb-12 animate-fade-in-up">Latest Articles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Post 1 -->
+                <div class="bg-[#001138] border border-white/10 rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300 shadow-xl cursor-pointer animate-fade-in-up delay-100 group">
+                    <div class="h-48 bg-gradient-to-br from-[#455eed]/40 to-[#8921ca]/40 overflow-hidden relative">
+                        <div class="absolute inset-0 flex justify-center items-center">
+                            <i class="fa-solid fa-chart-line text-white/50 text-5xl group-hover:scale-110 transition duration-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-[#6665fe] font-bold text-sm mb-2">Analytics</div>
+                        <h3 class="text-white text-xl font-bold mb-3 font-['Clash_Display']">How to read your competitor's marketing strategy</h3>
+                        <p class="text-white/70 text-sm mb-4">Learn the 5 key signals that indicate what your competitors are planning for their next quarter.</p>
+                        <div class="text-white/50 text-xs">May 1, 2026 • 5 min read</div>
+                    </div>
+                </div>
+                <!-- Post 2 -->
+                <div class="bg-[#001138] border border-white/10 rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300 shadow-xl cursor-pointer animate-fade-in-up delay-200 group">
+                    <div class="h-48 bg-gradient-to-br from-[#8921ca]/40 to-[#6665fe]/40 overflow-hidden relative">
+                        <div class="absolute inset-0 flex justify-center items-center">
+                            <i class="fa-solid fa-bullseye text-white/50 text-5xl group-hover:scale-110 transition duration-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-[#6665fe] font-bold text-sm mb-2">Strategy</div>
+                        <h3 class="text-white text-xl font-bold mb-3 font-['Clash_Display']">Boosting Conversion Rates with AI insights</h3>
+                        <p class="text-white/70 text-sm mb-4">Discover how machine learning models can predict user drop-off points before they happen.</p>
+                        <div class="text-white/50 text-xs">Apr 28, 2026 • 7 min read</div>
+                    </div>
+                </div>
+                <!-- Post 3 -->
+                <div class="bg-[#001138] border border-white/10 rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300 shadow-xl cursor-pointer animate-fade-in-up delay-300 group">
+                    <div class="h-48 bg-gradient-to-br from-[#455eed]/40 to-[#6665fe]/40 overflow-hidden relative">
+                        <div class="absolute inset-0 flex justify-center items-center">
+                            <i class="fa-solid fa-rocket text-white/50 text-5xl group-hover:scale-110 transition duration-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-[#6665fe] font-bold text-sm mb-2">Product</div>
+                        <h3 class="text-white text-xl font-bold mb-3 font-['Clash_Display']">Orinix V2: What's new in our latest release</h3>
+                        <p class="text-white/70 text-sm mb-4">We've completely overhauled the dashboard and added real-time tracking capabilities.</p>
+                        <div class="text-white/50 text-xs">Apr 15, 2026 • 3 min read</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ section -->
+    <div class="w-full h-auto bg-[#001138] py-20 px-4">
+      <div class="flex flex-col items-center gap-6 animate-fade-in-up delay-100">
+        <h5 class="text-3xl md:text-5xl font-bold font-['Clash_Display'] text-white">Frequently Asked Questions</h5>
+        <p class="opacity-80 text-base text-center text-white max-w-2xl">Find answers to the most common questions about Orinix.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 max-w-6xl mx-auto mt-16 animate-fade-in-up delay-200">
+        <div class="flex flex-col gap-4 bg-[#05194a] p-6 rounded-2xl border border-white/5 hover:border-white/20 transition">
+          <h6 class="text-lg font-bold text-white flex items-center gap-3"><i class="fa-solid fa-circle-question text-[#6665fe]"></i> How does the AI analysis work?</h6>
+          <p class="opacity-80 text-sm text-white text-justify ml-8">Our proprietary AI models scan public data sources and marketing channels to identify patterns and performance metrics of your competitors, delivering actionable insights directly to your dashboard.</p>
+        </div>
+        <div class="flex flex-col gap-4 bg-[#05194a] p-6 rounded-2xl border border-white/5 hover:border-white/20 transition">
+          <h6 class="text-lg font-bold text-white flex items-center gap-3"><i class="fa-solid fa-circle-question text-[#6665fe]"></i> Can I integrate my own data?</h6>
+          <p class="opacity-80 text-sm text-white text-justify ml-8">Yes, Orinix provides a secure API and native integrations with major analytics platforms so you can overlay your own data with our competitive insights.</p>
+        </div>
+        <div class="flex flex-col gap-4 bg-[#05194a] p-6 rounded-2xl border border-white/5 hover:border-white/20 transition">
+          <h6 class="text-lg font-bold text-white flex items-center gap-3"><i class="fa-solid fa-circle-question text-[#6665fe]"></i> What is included in the free trial?</h6>
+          <p class="opacity-80 text-sm text-white text-justify ml-8">The 14-day free trial gives you full access to all Premium features, including unlimited links, custom analytics, and priority support. No credit card is required to start.</p>
+        </div>
+        <div class="flex flex-col gap-4 bg-[#05194a] p-6 rounded-2xl border border-white/5 hover:border-white/20 transition">
+          <h6 class="text-lg font-bold text-white flex items-center gap-3"><i class="fa-solid fa-circle-question text-[#6665fe]"></i> Can I cancel my subscription?</h6>
+          <p class="opacity-80 text-sm text-white text-justify ml-8">Absolutely. Orinix is a month-to-month service with no long-term contracts. You can easily cancel or change your plan at any time from your account settings.</p>
+        </div>
+      </div>
+      <div class="flex gap-1 justify-center items-center mt-16 animate-fade-in-up delay-300">
+        <p class="text-white">Didn't find your answer?</p>
+        <p class="text-[#6665fe] font-bold hover:underline cursor-pointer">Contact our support team.</p>
+      </div>
+    </div>
+
+    <!-- footer section -->
+    <div class="w-full bg-[#05194a] py-12 px-4 md:px-10 font-[clash_display] border-t border-white/5 mt-auto">
+      <div class="flex flex-col text-white md:flex-row justify-between items-center gap-6 md:gap-10">
+        <div class="flex items-center gap-2">
+          <div class="w-10 h-10 bg-gradient-to-tr from-[#455eed] to-[#8921ca] rounded-xl flex justify-center items-center shadow-[0_0_10px_rgba(69,94,237,0.5)]"><i class="fa-solid fa-chart-pie text-white text-lg"></i></div>
+          <p class="text-white font-bold text-xl font-['Clash_Display']">Orinix</p>
+        </div>
+        <div class="flex gap-2">
+          <div class="w-8 h-8 bg-[#2c5b99] hover:bg-[#6665fe] transition text-white flex items-center justify-center rounded-full cursor-pointer"><i class="fab fa-facebook text-base"></i></div>
+          <div class="w-8 h-8 bg-[#0078b4] hover:bg-[#6665fe] transition text-white flex items-center justify-center rounded-full cursor-pointer"><i class="fab fa-linkedin-in text-base"></i></div>
+          <div class="w-8 h-8 bg-[#00aeef] hover:bg-[#6665fe] transition text-white flex items-center justify-center rounded-full cursor-pointer"><i class="fab fa-twitter text-base"></i></div>
+        </div>
+        <div><p class="text-white opacity-60 text-base text-center md:text-left">© 2024 Orinix Reserved</p></div>
+      </div>
+    </div>
+  </body>
+</html>

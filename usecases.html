@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usecases - Orinix</title>
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { theme: { extend: { fontFamily: { 'clash-display': ['Clash_Display', 'sans-serif'], 'inter': ['Inter', 'sans-serif'], }, colors: { brand: { dark: '#001138', primary: '#6665fe', blue: '#455eed', light: '#081342', } } } } }
+    </script>
+    <style>
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #001138; }
+      ::-webkit-scrollbar-thumb { background: #6665fe; border-radius: 4px; }
+      html { scroll-behavior: smooth; }
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes zoomIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+      @keyframes fadeRight { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+      .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
+      .animate-zoom-in { animation: zoomIn 0.8s ease-out forwards; opacity: 0; }
+      .animate-fade-right { animation: fadeRight 0.8s ease-out forwards; opacity: 0; }
+      .delay-100 { animation-delay: 100ms; }
+      .delay-200 { animation-delay: 200ms; }
+      .delay-300 { animation-delay: 300ms; }
+    </style>
+  </head>
+  <body class="bg-[#001138] font-['Clash_Display']">
+    <nav class="flex justify-between items-center px-4 py-4 md:px-8 md:py-5 bg-[#081342] relative z-50">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-gradient-to-tr from-[#455eed] to-[#8921ca] rounded-xl flex justify-center items-center shadow-[0_0_10px_rgba(69,94,237,0.5)]"><i class="fa-solid fa-chart-pie text-white text-lg"></i></div>
+        <p class="text-white font-bold text-xl font-['Clash_Display']">Orinix</p>
+      </div>
+      <div class="md:hidden cursor-pointer" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"><i class="fa-solid fa-bars text-white text-2xl hover:text-[#6665fe] transition"></i></div>
+      <ul class="hidden md:flex gap-8 text-white text-base font-['Clash_Display'] items-center">
+        <li><a href="index.html" class="hover:text-[#6665fe] transition cursor-pointer">Homepage</a></li>
+        <li><a href="features.html" class="hover:text-[#6665fe] transition cursor-pointer">Features</a></li>
+        <li><a href="usecases.html" class="text-white font-bold cursor-pointer transition hover:text-[#6665fe]">Usecases</a></li>
+        <li><a href="pricing.html" class="hover:text-[#6665fe] transition cursor-pointer">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-[#6665fe] transition cursor-pointer">Blog</a></li>
+      </ul>
+      <button class="hidden md:block text-white bg-[#6665fe] hover:bg-[#455eed] transition rounded-lg shadow-[0_0_15px_rgba(102,101,254,0.5)] font-semibold px-6 py-2.5 font-['Clash_Display']">Join the waitlist</button>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#081342] border-t border-white/10 flex-col items-center py-6 gap-6 md:hidden shadow-2xl z-50">
+        <ul class="flex flex-col gap-4 text-center text-white text-lg font-['Clash_Display'] w-full">
+          <li><a href="index.html" class="hover:text-[#6665fe] transition cursor-pointer">Homepage</a></li>
+          <li><a href="features.html" class="hover:text-[#6665fe] transition cursor-pointer">Features</a></li>
+          <li><a href="usecases.html" class="font-bold cursor-pointer hover:text-[#6665fe] transition">Usecases</a></li>
+          <li><a href="pricing.html" class="hover:text-[#6665fe] transition cursor-pointer">Pricing</a></li>
+          <li><a href="blog.html" class="hover:text-[#6665fe] transition cursor-pointer">Blog</a></li>
+        </ul>
+        <button class="text-white bg-[#6665fe] hover:bg-[#455eed] transition rounded-lg shadow-lg font-semibold px-8 py-3 font-['Clash_Display'] w-11/12">Join the waitlist</button>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="relative w-full py-24 flex justify-center items-center overflow-hidden bg-[#001138]">
+      <div class="absolute top-0 w-[500px] h-[500px] bg-[#455eed] rounded-full blur-[150px] opacity-30"></div>
+      <div class="z-10 text-center px-4 animate-fade-in-up">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">Who uses <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#455eed] to-[#8921ca]">Orinix?</span></h1>
+        <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">See how the world's best teams analyze data and grow.</p>
+      </div>
+    </div>
+
+    <!-- Usecases Content (From Homepage) -->
+    <div id="usecases">
+      <div class="bg-[#001139] w-full py-16 flex flex-col items-center gap-4 font-['Clash_Display'] px-4 text-center border-y border-white/5 animate-fade-in-up delay-100">
+        <h3 class="text-2xl md:text-4xl font-bold text-white">Useful softwares that We assist.</h3>
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 mt-8 md:mt-12 opacity-70">
+            <div class="flex items-center gap-2 text-white text-2xl md:text-3xl font-bold hover:opacity-100 transition"><i class="fa-brands fa-apple text-3xl md:text-4xl"></i> Apple</div>
+            <div class="flex items-center gap-2 text-white text-2xl md:text-3xl font-bold hover:opacity-100 transition"><i class="fa-brands fa-google text-3xl md:text-4xl"></i> Google</div>
+            <div class="flex items-center gap-2 text-white text-2xl md:text-3xl font-bold hover:opacity-100 transition"><i class="fa-brands fa-microsoft text-3xl md:text-4xl"></i> Microsoft</div>
+            <div class="flex items-center gap-2 text-white text-2xl md:text-3xl font-bold hover:opacity-100 transition"><i class="fa-brands fa-amazon text-3xl md:text-4xl"></i> Amazon</div>
+            <div class="flex items-center gap-2 text-white text-2xl md:text-3xl font-bold hover:opacity-100 transition"><i class="fa-brands fa-figma text-3xl md:text-4xl"></i> Figma</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center font-['Clash_Display'] gap-10 py-20 md:py-24 w-full bg-[#05194a] px-4 animate-fade-in-up delay-200">
+        <h4 class="text-2xl md:text-4xl font-bold text-white text-center">What people are saying about Orinix!</h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto w-full mt-8 animate-zoom-in delay-300">
+            <!-- Card 1 -->
+            <div class="bg-[#001138] border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col gap-6 shadow-xl hover:-translate-y-2 transition duration-300">
+                <div class="flex gap-1 text-yellow-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-white/80 text-base flex-1">"Orinix has completely transformed how we handle our analytics. The AI insights are spot on and have boosted our conversion rates significantly."</p>
+                <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-[#6665fe] to-[#8921ca] rounded-full flex justify-center items-center font-bold text-white text-lg">S</div>
+                    <div><div class="text-white font-bold">Sarah Jenkins</div><div class="text-white/50 text-sm">Marketing Director</div></div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-gradient-to-br from-[#455eed] to-[#8921ca] border border-white/20 rounded-2xl p-6 md:p-8 flex flex-col gap-6 shadow-xl transform md:scale-105 hover:-translate-y-2 transition duration-300">
+                <div class="flex gap-1 text-yellow-300 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-white text-base flex-1">"The best tool for competitive analysis out there. The dashboard is beautiful and the data is extremely accurate and actionable."</p>
+                <div class="flex items-center gap-4 border-t border-white/20 pt-6">
+                    <div class="w-12 h-12 bg-white rounded-full flex justify-center items-center font-bold text-[#455eed] text-lg">M</div>
+                    <div><div class="text-white font-bold">Michael Chen</div><div class="text-white/80 text-sm">CEO, TechFlow</div></div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-[#001138] border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col gap-6 shadow-xl hover:-translate-y-2 transition duration-300">
+                <div class="flex gap-1 text-yellow-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-white/80 text-base flex-1">"We integrated Orinix last month and the ROI is already apparent. Highly recommend it for any data-driven business."</p>
+                <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-[#6665fe] to-[#8921ca] rounded-full flex justify-center items-center font-bold text-white text-lg">E</div>
+                    <div><div class="text-white font-bold">Emma Davis</div><div class="text-white/50 text-sm">Product Manager</div></div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer section -->
+    <div class="w-full bg-[#05194a] py-12 px-4 md:px-10 font-[clash_display] border-t border-white/5 mt-auto">
+      <div class="flex flex-col text-white md:flex-row justify-between items-center gap-6 md:gap-10">
+        <div class="flex items-center gap-2">
+          <div class="w-10 h-10 bg-gradient-to-tr from-[#455eed] to-[#8921ca] rounded-xl flex justify-center items-center shadow-[0_0_10px_rgba(69,94,237,0.5)]"><i class="fa-solid fa-chart-pie text-white text-lg"></i></div>
+          <p class="text-white font-bold text-xl font-['Clash_Display']">Orinix</p>
+        </div>
+        <div class="flex gap-2">
+          <div class="w-8 h-8 bg-[#2c5b99] hover:bg-[#6665fe] transition text-white flex items-center justify-center rounded-full cursor-pointer"><i class="fab fa-facebook text-base"></i></div>
+          <div class="w-8 h-8 bg-[#0078b4] hover:bg-[#6665fe] transition text-white flex items-center justify-center rounded-full cursor-pointer"><i class="fab fa-linkedin-in text-base"></i></div>
+          <div class="w-8 h-8 bg-[#00aeef] hover:bg-[#6665fe] transition text-white flex items-center justify-center rounded-full cursor-pointer"><i class="fab fa-twitter text-base"></i></div>
+        </div>
+        <div><p class="text-white opacity-60 text-base text-center md:text-left">© 2024 Orinix Reserved</p></div>
+      </div>
+    </div>
+  </body>
+</html>

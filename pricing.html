@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing - Orinix</title>
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { theme: { extend: { fontFamily: { 'clash-display': ['Clash_Display', 'sans-serif'], 'inter': ['Inter', 'sans-serif'], }, colors: { brand: { dark: '#001138', primary: '#6665fe', blue: '#455eed', light: '#081342', } } } } }
+    </script>
+    <style>
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #001138; }
+      ::-webkit-scrollbar-thumb { background: #6665fe; border-radius: 4px; }
+      html { scroll-behavior: smooth; }
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes zoomIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+      @keyframes fadeRight { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+      .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
+      .animate-zoom-in { animation: zoomIn 0.8s ease-out forwards; opacity: 0; }
+      .animate-fade-right { animation: fadeRight 0.8s ease-out forwards; opacity: 0; }
+      .delay-100 { animation-delay: 100ms; }
+      .delay-200 { animation-delay: 200ms; }
+      .delay-300 { animation-delay: 300ms; }
+    </style>
+  </head>
+  <body class="bg-[#001138] font-['Clash_Display']">
+    <nav class="flex justify-between items-center px-4 py-4 md:px-8 md:py-5 bg-[#081342] relative z-50">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-gradient-to-tr from-[#455eed] to-[#8921ca] rounded-xl flex justify-center items-center shadow-[0_0_10px_rgba(69,94,237,0.5)]"><i class="fa-solid fa-chart-pie text-white text-lg"></i></div>
+        <p class="text-white font-bold text-xl font-['Clash_Display']">Orinix</p>
+      </div>
+      <div class="md:hidden cursor-pointer" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"><i class="fa-solid fa-bars text-white text-2xl hover:text-[#6665fe] transition"></i></div>
+      <ul class="hidden md:flex gap-8 text-white text-base font-['Clash_Display'] items-center">
+        <li><a href="index.html" class="hover:text-[#6665fe] transition cursor-pointer">Homepage</a></li>
+        <li><a href="features.html" class="hover:text-[#6665fe] transition cursor-pointer">Features</a></li>
+        <li><a href="usecases.html" class="hover:text-[#6665fe] transition cursor-pointer">Usecases</a></li>
+        <li><a href="pricing.html" class="text-white font-bold cursor-pointer transition hover:text-[#6665fe]">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-[#6665fe] transition cursor-pointer">Blog</a></li>
+      </ul>
+      <button class="hidden md:block text-white bg-[#6665fe] hover:bg-[#455eed] transition rounded-lg shadow-[0_0_15px_rgba(102,101,254,0.5)] font-semibold px-6 py-2.5 font-['Clash_Display']">Join the waitlist</button>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#081342] border-t border-white/10 flex-col items-center py-6 gap-6 md:hidden shadow-2xl z-50">
+        <ul class="flex flex-col gap-4 text-center text-white text-lg font-['Clash_Display'] w-full">
+          <li><a href="index.html" class="hover:text-[#6665fe] transition cursor-pointer">Homepage</a></li>
+          <li><a href="features.html" class="hover:text-[#6665fe] transition cursor-pointer">Features</a></li>
+          <li><a href="usecases.html" class="hover:text-[#6665fe] transition cursor-pointer">Usecases</a></li>
+          <li><a href="pricing.html" class="font-bold cursor-pointer hover:text-[#6665fe] transition">Pricing</a></li>
+          <li><a href="blog.html" class="hover:text-[#6665fe] transition cursor-pointer">Blog</a></li>
+        </ul>
+        <button class="text-white bg-[#6665fe] hover:bg-[#455eed] transition rounded-lg shadow-lg font-semibold px-8 py-3 font-['Clash_Display'] w-11/12">Join the waitlist</button>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="relative w-full py-24 flex justify-center items-center overflow-hidden bg-[#001138]">
+      <div class="absolute top-0 w-[500px] h-[500px] bg-[#6665fe] rounded-full blur-[150px] opacity-20"></div>
+      <div class="z-10 text-center px-4 animate-fade-in-up">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">Simple <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#6665fe] to-[#455eed]">Pricing</span></h1>
+        <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">No hidden fees. Free 14-day trial on all premium features.</p>
+      </div>
+    </div>
+
+    <!-- Pricing Content (From Homepage) -->
+    <div id="pricing" class="w-full h-auto bg-[#00133b] py-20 pb-32">
+      <!-- pricing cards section -->
+      <div class="flex flex-col md:flex-row justify-center items-center mt-12 gap-8 md:gap-12 font-['Clash_Display'] px-4 max-w-7xl mx-auto">
+        <!-- card 1 -->
+        <div class="w-full md:w-80 h-auto border border-white/10 rounded-3xl px-10 py-10 bg-[#05194a] shadow-xl hover:-translate-y-2 transition duration-300 animate-fade-in-up delay-100">
+          <p class="text-base text-white opacity-70 uppercase tracking-widest font-bold">Silver</p>
+          <div class="flex gap-2 items-center mt-2">
+            <h4 class="text-4xl md:text-5xl font-bold text-white">$50</h4>
+            <p class="text-base text-white opacity-70">/month</p>
+          </div>
+          <div class="flex flex-col gap-4 mt-8">
+            <p class="text-white opacity-80 flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> No Discount</p>
+            <p class="text-white opacity-80 flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> Basic support</p>
+            <p class="text-white opacity-80 flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> Ads Banner Free</p>
+            <p class="text-white opacity-80 flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> Design Style</p>
+            <p class="text-white opacity-80 flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> Component library</p>
+            <p class="text-white opacity-40 flex items-center gap-3"><i class="fa-solid fa-xmark text-red-500"></i> All Limited links</p>
+            <p class="text-white opacity-40 flex items-center gap-3"><i class="fa-solid fa-xmark text-red-500"></i> Own Analytics</p>
+          </div>
+          <button class="w-full text-[#455eed] bg-white hover:bg-gray-100 transition rounded-xl shadow-lg font-bold px-5 py-3 mt-10">Choose plan</button>
+        </div>
+
+        <!-- card 2 -->
+        <div class="w-full md:w-80 h-auto rounded-3xl px-10 py-12 md:-mt-10 bg-gradient-to-b from-[#455eed] to-[#6665fe] shadow-2xl relative animate-zoom-in delay-200">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-[#455eed] text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full shadow-lg">Most Popular</div>
+          <p class="text-base text-white opacity-90 uppercase tracking-widest font-bold">Gold</p>
+          <div class="flex gap-2 items-center mt-2">
+            <h4 class="text-4xl md:text-5xl font-bold text-white">$100</h4>
+            <p class="text-base text-white opacity-90">/month</p>
+          </div>
+          <div class="flex flex-col gap-4 mt-8">
+            <p class="text-white flex items-center gap-3"><i class="fa-solid fa-check text-white"></i> 10% Discount</p>
+            <p class="text-white flex items-center gap-3"><i class="fa-solid fa-check text-white"></i> Priority support</p>
+            <p class="text-white flex items-center gap-3"><i class="fa-solid fa-check text-white"></i> Ads Banner Free</p>
+            <p class="text-white flex items-center gap-3"><i class="fa-solid fa-check text-white"></i> Design Style</p>
+            <p class="text-white flex items-center gap-3"><i class="fa-solid fa-check text-white"></i> Component library</p>
+            <p class="text-white flex items-center gap-3"><i class="fa-solid fa-check text-white"></i> Unlimited links</p>
+            <p class="text-white flex items-center gap-3"><i class="fa-solid fa-check text-white"></i> Own Analytics</p>
+          </div>
+          <button class="w-full text-[#455eed] bg-white hover:bg-gray-100 transition rounded-xl shadow-lg font-bold px-5 py-3 mt-10">Choose plan</button>
+        </div>
+
+        <!-- card 3 -->
+        <div class="w-full md:w-80 h-auto border border-white/10 rounded-3xl px-10 py-10 bg-[#05194a] shadow-xl hover:-translate-y-2 transition duration-300 animate-fade-in-up delay-300">
+          <p class="text-base text-white opacity-70 uppercase tracking-widest font-bold">Premium</p>
+          <div class="flex gap-2 items-center mt-2">
+            <h4 class="text-4xl md:text-5xl font-bold text-white">$150</h4>
+            <p class="text-base text-white opacity-70">/month</p>
+          </div>
+          <div class="flex flex-col gap-4 mt-8">
+            <p class="text-white opacity-80 flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> 20% Discount</p>
+            <p class="text-white opacity-80 flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> 24/7 support</p>
+            <p class="text-white opacity-80 flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> Ads Banner Free</p>
+            <p class="text-white opacity-80 flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> Design Style</p>
+            <p class="text-white opacity-80 flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> Component library</p>
+            <p class="text-white opacity-80 flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> Unlimited links</p>
+            <p class="text-white opacity-80 flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> Custom Analytics</p>
+          </div>
+          <button class="w-full text-white bg-transparent border border-white hover:bg-white hover:text-[#001138] transition rounded-xl shadow-lg font-bold px-5 py-3 mt-10">Choose plan</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- free version section -->
+    <div class="w-full bg-[#001138] py-20 px-4 md:px-8 font-['Clash_Display'] animate-fade-in-up delay-200">
+      <div class="max-w-6xl mx-auto w-full border border-white/10 rounded-3xl bg-[#455eed] px-6 py-10 md:px-16 md:py-16 flex flex-col md:flex-row gap-12 items-center shadow-2xl relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+        </div>
+        
+        <!-- text section  -->
+        <div class="flex flex-col justify-start gap-6 w-full md:w-1/2 relative z-10">
+          <div class="flex gap-4 flex-col justify-start">
+            <h6 class="text-3xl md:text-5xl font-bold text-white text-center md:text-left leading-tight">
+              Explore Free Version now!
+            </h6>
+            <p class="opacity-90 text-base md:text-lg text-white/90 text-center md:text-left">
+              Search all the open positions on the web. Get your own
+              personalized dashboard for lifetime.
+            </p>
+          </div>
+          <!-- buttons -->
+          <div class="mt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <button class="text-[#455eed] bg-white hover:bg-gray-100 transition rounded-lg shadow-lg font-bold px-6 py-3">
+              Join the waitlist
+            </button>
+            <div class="text-white border border-white/50 hover:bg-white/10 transition rounded-lg font-bold px-8 py-3 text-center cursor-pointer">
+              Know more
+            </div>
+          </div>
+        </div>
+
+        <!-- illustration code component -->
+        <div class="w-full md:w-1/2 relative z-10 flex justify-center mt-8 md:mt-0">
+            <div class="relative w-full max-w-sm h-[250px] md:h-[300px]">
+                <!-- Main window -->
+                <div class="absolute right-0 bottom-0 w-4/5 h-48 md:h-64 bg-white rounded-xl shadow-2xl p-4 flex flex-col gap-4">
+                    <div class="flex gap-2 border-b border-gray-100 pb-2">
+                        <div class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-400"></div>
+                        <div class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-400"></div>
+                        <div class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-400"></div>
+                    </div>
+                    <div class="flex gap-4 h-full">
+                        <div class="w-1/3 flex flex-col gap-2">
+                            <div class="h-10 md:h-16 bg-[#455eed]/10 rounded-lg"></div>
+                            <div class="h-10 md:h-16 bg-[#8921ca]/10 rounded-lg"></div>
+                        </div>
+                        <div class="w-2/3 flex flex-col gap-2 h-full">
+                            <div class="h-6 md:h-8 bg-gray-100 rounded-md w-full"></div>
+                            <div class="flex-1 bg-gray-50 rounded-lg flex items-end p-2 gap-1 pb-0">
+                                <div class="w-full bg-[#455eed] h-[30%] rounded-t-sm"></div>
+                                <div class="w-full bg-[#8921ca] h-[60%] rounded-t-sm"></div>
+                                <div class="w-full bg-[#455eed] h-[40%] rounded-t-sm"></div>
+                                <div class="w-full bg-[#8921ca] h-[80%] rounded-t-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Floating profile -->
+                <div class="absolute top-0 left-0 bg-white p-2 md:p-3 rounded-xl shadow-xl flex items-center gap-2 md:gap-3 animate-bounce" style="animation-duration: 3s;">
+                    <div class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-tr from-[#6665fe] to-[#8921ca] rounded-full flex justify-center items-center text-white font-bold">O</div>
+                    <div>
+                        <div class="text-gray-800 text-xs md:text-sm font-bold">Account Setup</div>
+                        <div class="text-green-500 text-[10px] md:text-xs font-bold">Completed</div>
+                    </div>
+                </div>
+                <!-- Floating badge -->
+                <div class="absolute top-20 -left-6 bg-[#8921ca] text-white p-2 md:p-3 rounded-xl shadow-xl font-bold text-xs md:text-sm transform -rotate-12">
+                    Free Lifetime Access!
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer section -->
+    <div class="w-full bg-[#05194a] py-12 px-4 md:px-10 font-[clash_display] border-t border-white/5 mt-auto">
+      <div class="flex flex-col text-white md:flex-row justify-between items-center gap-6 md:gap-10">
+        <div class="flex items-center gap-2">
+          <div class="w-10 h-10 bg-gradient-to-tr from-[#455eed] to-[#8921ca] rounded-xl flex justify-center items-center shadow-[0_0_10px_rgba(69,94,237,0.5)]"><i class="fa-solid fa-chart-pie text-white text-lg"></i></div>
+          <p class="text-white font-bold text-xl font-['Clash_Display']">Orinix</p>
+        </div>
+        <div class="flex gap-2">
+          <div class="w-8 h-8 bg-[#2c5b99] hover:bg-[#6665fe] transition text-white flex items-center justify-center rounded-full cursor-pointer"><i class="fab fa-facebook text-base"></i></div>
+          <div class="w-8 h-8 bg-[#0078b4] hover:bg-[#6665fe] transition text-white flex items-center justify-center rounded-full cursor-pointer"><i class="fab fa-linkedin-in text-base"></i></div>
+          <div class="w-8 h-8 bg-[#00aeef] hover:bg-[#6665fe] transition text-white flex items-center justify-center rounded-full cursor-pointer"><i class="fab fa-twitter text-base"></i></div>
+        </div>
+        <div><p class="text-white opacity-60 text-base text-center md:text-left">© 2024 Orinix Reserved</p></div>
+      </div>
+    </div>
+  </body>
+</html>

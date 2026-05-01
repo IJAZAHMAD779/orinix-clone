@@ -61,6 +61,34 @@
       html {
         scroll-behavior: smooth;
       }
+      /* Entrance Animations */
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes zoomIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      @keyframes fadeRight {
+        from { opacity: 0; transform: translateX(-30px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+      }
+      .animate-zoom-in {
+        animation: zoomIn 0.8s ease-out forwards;
+        opacity: 0;
+      }
+      .animate-fade-right {
+        animation: fadeRight 0.8s ease-out forwards;
+        opacity: 0;
+      }
+      .delay-100 { animation-delay: 100ms; }
+      .delay-200 { animation-delay: 200ms; }
+      .delay-300 { animation-delay: 300ms; }
     </style>
   </head>
   <body class="bg-[#001138] font-['Clash_Display']">
@@ -83,11 +111,11 @@
 
       <!-- Center: Navigation Links (Desktop) -->
       <ul class="hidden md:flex gap-8 text-white text-base font-['Clash_Display'] items-center">
-        <li><a href="#hero" class="text-white font-bold cursor-pointer transition hover:text-[#6665fe]">Homepage</a></li>
-        <li><a href="#features" class="hover:text-[#6665fe] transition cursor-pointer">Features</a></li>
-        <li><a href="#usecases" class="hover:text-[#6665fe] transition cursor-pointer">Usecases</a></li>
-        <li><a href="#pricing" class="hover:text-[#6665fe] transition cursor-pointer">Pricing</a></li>
-        <li><a href="#blog" class="hover:text-[#6665fe] transition cursor-pointer">Blog</a></li>
+        <li><a href="index.html" class="text-white font-bold cursor-pointer transition hover:text-[#6665fe]">Homepage</a></li>
+        <li><a href="features.html" class="hover:text-[#6665fe] transition cursor-pointer">Features</a></li>
+        <li><a href="usecases.html" class="hover:text-[#6665fe] transition cursor-pointer">Usecases</a></li>
+        <li><a href="pricing.html" class="hover:text-[#6665fe] transition cursor-pointer">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-[#6665fe] transition cursor-pointer">Blog</a></li>
       </ul>
 
       <!-- Right: Button (Desktop) -->
@@ -98,11 +126,11 @@
       <!-- Mobile Menu Dropdown -->
       <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#081342] border-t border-white/10 flex-col items-center py-6 gap-6 md:hidden shadow-2xl z-50">
         <ul class="flex flex-col gap-4 text-center text-white text-lg font-['Clash_Display'] w-full">
-          <li><a href="#hero" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="font-bold cursor-pointer hover:text-[#6665fe] transition">Homepage</a></li>
-          <li><a href="#features" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#6665fe] transition cursor-pointer">Features</a></li>
-          <li><a href="#usecases" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#6665fe] transition cursor-pointer">Usecases</a></li>
-          <li><a href="#pricing" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#6665fe] transition cursor-pointer">Pricing</a></li>
-          <li><a href="#blog" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#6665fe] transition cursor-pointer">Blog</a></li>
+          <li><a href="index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="font-bold cursor-pointer hover:text-[#6665fe] transition">Homepage</a></li>
+          <li><a href="features.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#6665fe] transition cursor-pointer">Features</a></li>
+          <li><a href="usecases.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#6665fe] transition cursor-pointer">Usecases</a></li>
+          <li><a href="pricing.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#6665fe] transition cursor-pointer">Pricing</a></li>
+          <li><a href="blog.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#6665fe] transition cursor-pointer">Blog</a></li>
         </ul>
         <button class="text-white bg-[#6665fe] hover:bg-[#455eed] transition rounded-lg shadow-lg font-semibold px-8 py-3 font-['Clash_Display'] w-11/12">
           Join the waitlist
@@ -128,40 +156,32 @@
 
       <!-- Content -->
       <div
-        class="relative z-10 flex flex-col items-center justify-center h-full text-center"
+        class="relative z-10 flex flex-col items-center justify-center h-full text-center mt-12 md:mt-0"
       >
-        <h1
-          class="text-white text-3xl md:text-6xl font-['Clash_Display'] font-bold"
-        >
-          Integrate AI For A
-        </h1>
-        <h1
-          class="text-white text-3xl md:text-6xl font-['Clash_Display'] font-bold"
-        >
-          Competitive Analysis
-        </h1>
-        <h1
-          class="text-white text-3xl md:text-6xl font-['Clash_Display'] font-bold"
-        >
-          For Your Business
-        </h1>
-        <p class="text-gray-300 mt-4 font-['Inter'] max-w-lg">
+        <div class="animate-fade-in-up">
+            <h1 class="text-white text-4xl md:text-6xl lg:text-7xl font-['Clash_Display'] font-bold leading-tight">
+              Integrate AI For A <br />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#6665fe] to-[#8921ca]">Competitive Analysis</span> <br />
+              For Your Business
+            </h1>
+        </div>
+        <p class="text-gray-300 mt-6 md:mt-8 font-['Inter'] max-w-lg md:max-w-2xl text-lg md:text-xl animate-fade-in-up delay-100">
           Elevate your advertising game with creatives that consistently
           outperform your competitors, setting your brand apart.
         </p>
-        <div class="mt-8 flex gap-4">
+        <div class="mt-8 md:mt-10 flex gap-4 animate-fade-in-up delay-200">
           <button
-            class="text-white bg-[#6665fe] rounded-lg shadow-lg font-semibold px-5 py-2 font-['Clash_Display']"
+            class="text-white bg-[#6665fe] hover:bg-[#455eed] transition rounded-lg shadow-[0_0_20px_rgba(102,101,254,0.6)] font-semibold px-8 py-3 font-['Clash_Display'] text-lg"
           >
             Join the waitlist
           </button>
           <div
-            class="text-white border border-white rounded-lg shadow-lg font-semibold px-8 py-2 font-['Clash_Display'] cursor-pointer inline-block"
+            class="text-white border border-white hover:bg-white hover:text-[#001138] transition rounded-lg shadow-lg font-semibold px-8 py-3 font-['Clash_Display'] text-lg cursor-pointer inline-block"
           >
-            know more
+            Know more
           </div>
         </div>
-        <div class="flex flex-col mt-12 md:w-full justify-center items-center w-full overflow-hidden">
+        <div class="flex flex-col mt-16 md:w-full justify-center items-center w-full overflow-hidden animate-zoom-in delay-300">
           <!-- Dashboard Code Component -->
           <div class="relative w-[90%] md:w-[819px] h-[300px] md:h-[450px] bg-white/10 backdrop-blur-md border border-white/20 rounded-t-2xl shadow-2xl p-4 md:p-6 flex flex-col gap-4 mt-8">
             <!-- Header -->
